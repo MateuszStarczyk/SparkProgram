@@ -40,7 +40,7 @@ public class SparkProgram {
         dfConditions.distinct().write().mode(SaveMode.Overwrite).saveAsTable("car_accidents.conditions_temp1");
 
         //PLACES
-        DataFrame dfPlaces = dfAccidents.select(col("Accident_Index"), col("Longitude"),
+        DataFrame dfPlaces = dfAccidents.select(col("Accident_Index").as("Accident_ID"), col("Longitude"),
                 col("Latitude"), col("Local_Authority_(District)").as("District"),
                 col("Local_Authority_(Highway)").as("Highway"), col("Speed_limit"));
         dfPlaces.write().mode(SaveMode.Overwrite)
@@ -72,7 +72,8 @@ public class SparkProgram {
                         .when(col("Vehicle_Type").in(19, 20, 21, 98).and(col("Journey_Purpose_of_Driver").equalTo(1)), "Professional truck driver")
                         .otherwise("Others").as("Driver_Type"))
                 .withColumn("Driver_ID", monotonically_increasing_id());
-        dfDrivers.write().mode(SaveMode.Overwrite)
+        dfDrivers.select("Driver_ID", "Driver_Type", "Driver_Age_Band", "Vehicle_Age_Band")
+                .write().mode(SaveMode.Overwrite)
                 .saveAsTable("car_accidents.drivers_temp1");
 
         //ACCIDENTS
@@ -81,12 +82,7 @@ public class SparkProgram {
                 .agg(avg("Age_of_Casualty").as("Average_Casualty_Age"), avg("Casualty_Severity").as("Average_Casualty_Severity"));
         DataFrame accidentsWithCasualties = avgCasualty
                 .join(
-                        dfAccidents.select(col("Accident_Index"),
-                                col("Number_of_Vehicles"),
-                                col("1st_Road_Number").as("Road_Number"),
-                                col("Light_Conditions"),
-                                col("Weather_Conditions"),
-                                col("Road_Surface_Conditions")),
+                        dfAccidents,
                         avgCasualty.col("Accident_Index").equalTo(dfAccidents.col("Accident_Index")))
                 .drop(dfAccidents.col("Accident_Index"));
 
@@ -102,7 +98,12 @@ public class SparkProgram {
         DataFrame accidentsWithDrivers = dfDrivers
                 .join(accidentsWithConditions, dfDrivers.col("Accident_Index").equalTo(accidentsWithConditions.col("Accident_Index")))
                 .drop(dfDrivers.col("Accident_Index"));
-        accidentsWithDrivers.write().mode(SaveMode.Overwrite).saveAsTable("car_accidents.accidents_temp1");
+        accidentsWithDrivers.
+                select(col("Accident_Index").as("Accident_ID"), col("Driver_ID"), col("Number_of_Vehicles"),
+                        col("Number_of_Casualties"), col("Accident_Severity").as("Severity"), col("Average_Casualty_Age"),
+                        col("Average_Casualty_Severity"), col("1st_Road_Number").as("Road_Number"), col("Conditions_Id"),
+                        col("Date"))
+                .write().mode(SaveMode.Overwrite).saveAsTable("car_accidents.accidents_temp1");
     }
 
     public static DataFrame getVehicles(HiveContext sqlContext) {

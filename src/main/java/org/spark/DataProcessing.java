@@ -116,7 +116,7 @@ public class DataProcessing {
         return dfDrivers.select("Driver_ID", "Driver_Type", "Driver_Age_Band", "Vehicle_Age_Band");
     }
 
-    private void saveDataFrame(DataFrame dataFrame, String tableName) {
+    public void saveDataFrame(DataFrame dataFrame, String tableName) {
         dataFrame.write().mode(SaveMode.Overwrite)
                 .saveAsTable(tableName);
     }

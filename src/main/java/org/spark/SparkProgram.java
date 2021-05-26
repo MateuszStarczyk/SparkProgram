@@ -10,6 +10,9 @@ import static org.apache.spark.sql.functions.*;
 
 public class SparkProgram {
 
+    private static final String VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/vehicles-full.csv";
+    private static final String ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/accidents-full.csv";
+    private static final String CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/casualties-full.csv";
 
     public static void main(String[] args) {
         System.out.println("DUPA");

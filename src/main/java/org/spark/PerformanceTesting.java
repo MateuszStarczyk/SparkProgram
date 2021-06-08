@@ -25,13 +25,13 @@ public class PerformanceTesting {
     private static final String LP_TEST2_ALLTYPES_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-accidents-alltypes.csv";
     private static final String LP_TEST2_ALLTYPES_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-casualties-alltypes.csv";
 
-    private static final String LP_TEST3_LOW_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-vehicles.csv";
-    private static final String LP_TEST3_LOW_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-accidents.csv";
-    private static final String LP_TEST3_LOW_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-casualties.csv";
+    private static final String LP_TEST3_LOW_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp3/lp-vehicles-low.csv";
+    private static final String LP_TEST3_LOW_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp3/lp-accidents-low.csv";
+    private static final String LP_TEST3_LOW_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp3/lp-casualties-low.csv";
 
-    private static final String LP_TEST3_HIGH_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-vehicles.csv";
-    private static final String LP_TEST3_HIGH_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-accidents.csv";
-    private static final String LP_TEST3_HIGH_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-casualties.csv";
+    private static final String LP_TEST3_HIGH_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp3/lp-vehicles-high.csv";
+    private static final String LP_TEST3_HIGH_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp3/lp-accidents-high.csv";
+    private static final String LP_TEST3_HIGH_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp3/lp-casualties-high.csv";
 
     private final HiveContext sqlContext;
 

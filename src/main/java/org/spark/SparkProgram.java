@@ -46,6 +46,7 @@ public class SparkProgram {
         dataProcessing.saveDataFrame(dates, "car_accidents.dates");
         dataProcessing.saveDataFrame(accidents, "car_accidents.accidents");
 
+        //FUNCTIONAL TESTING
         Testing testing = new Testing(sqlContext);
 
         testing.process();
@@ -59,7 +60,29 @@ public class SparkProgram {
         System.out.println("TEST 3: " + test3Result);
         System.out.println("TEST 4: " + test4Result);
         System.out.println("TEST 5: " + test5Result);
-    }
 
+        //PERFORMANCE TESTING
+        PerformanceTesting performanceTesting = new PerformanceTesting(sqlContext);
+
+        long performanceTest1SmallResult = performanceTesting.test1Small();
+        long performanceTest1MediumResult = performanceTesting.test1Medium();
+        long performanceTest1LargeResult = performanceTesting.test1Large();
+
+        long performanceTest2OneTypeResult = performanceTesting.test2OneType();
+        long performanceTest2AllTypesResult = performanceTesting.test2AllTypes();
+
+        long performanceTest3LowResult = performanceTesting.test3Low();
+        long performanceTest3HighResult = performanceTesting.test3High();
+
+        System.out.println("TEST 1 - MAŁY ZBIÓR (1K) = " + performanceTest1SmallResult + " [ms]");
+        System.out.println("TEST 1 - ŚREDNI ZBIÓR (10K) = " + performanceTest1MediumResult + " [ms]");
+        System.out.println("TEST 1 - DUŻY ZBIÓR (100K) = " + performanceTest1LargeResult + " [ms]");
+
+        System.out.println("TEST 2 - JEDEN TYP KIEROWCY = " + performanceTest2OneTypeResult + " [ms]");
+        System.out.println("TEST 2 - WSZYSTKIE TYPY KIEROWCÓW = " + performanceTest2AllTypesResult + " [ms]");
+
+        System.out.println("TEST 1 - MAŁA LICZBA OFIAR I POJAZDÓW = " + performanceTest3LowResult + " [ms]");
+        System.out.println("TEST 1 - DUŻA LICZBA OFIAR I POJAZDÓW = " + performanceTest3HighResult + " [ms]");
+    }
 
 }

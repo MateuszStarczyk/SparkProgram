@@ -17,13 +17,13 @@ public class PerformanceTesting {
     private static final String LP_TEST1_LARGE_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp1/lp-accidents-large.csv";
     private static final String LP_TEST1_LARGE_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp1/lp-casualties-large.csv";
 
-    private static final String LP_TEST2_ONETYPE_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-vehicles.csv";
-    private static final String LP_TEST2_ONETYPE_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-accidents.csv";
-    private static final String LP_TEST2_ONETYPE_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-casualties.csv";
+    private static final String LP_TEST2_ONETYPE_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-vehicles-onetype.csv";
+    private static final String LP_TEST2_ONETYPE_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-accidents-onetype.csv";
+    private static final String LP_TEST2_ONETYPE_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-casualties-onetype.csv";
 
-    private static final String LP_TEST2_ALLTYPES_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-vehicles.csv";
-    private static final String LP_TEST2_ALLTYPES_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-accidents.csv";
-    private static final String LP_TEST2_ALLTYPES_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-casualties.csv";
+    private static final String LP_TEST2_ALLTYPES_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-vehicles-alltypes.csv";
+    private static final String LP_TEST2_ALLTYPES_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-accidents-alltypes.csv";
+    private static final String LP_TEST2_ALLTYPES_CASUALTIES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/lp2/lp-casualties-alltypes.csv";
 
     private static final String LP_TEST3_LOW_VEHICLES_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-vehicles.csv";
     private static final String LP_TEST3_LOW_ACCIDENTS_CSV_PATH = "hdfs://quickstart.cloudera:8020/user/cloudera/data/test-data/test-data-accidents.csv";

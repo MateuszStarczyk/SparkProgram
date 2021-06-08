@@ -55,11 +55,6 @@ public class SparkProgram {
         boolean test3Result = testing.test3();
         boolean test4Result = testing.test4();
         boolean test5Result = testing.test5();
-        System.out.println("TEST 1: " + test1Result);
-        System.out.println("TEST 2: " + test2Result);
-        System.out.println("TEST 3: " + test3Result);
-        System.out.println("TEST 4: " + test4Result);
-        System.out.println("TEST 5: " + test5Result);
 
         //PERFORMANCE TESTING
         PerformanceTesting performanceTesting = new PerformanceTesting(sqlContext);
@@ -74,6 +69,12 @@ public class SparkProgram {
         long performanceTest3LowResult = performanceTesting.test3Low();
         long performanceTest3HighResult = performanceTesting.test3High();
 
+        System.out.println("TEST 1: " + test1Result);
+        System.out.println("TEST 2: " + test2Result);
+        System.out.println("TEST 3: " + test3Result);
+        System.out.println("TEST 4: " + test4Result);
+        System.out.println("TEST 5: " + test5Result);
+
         System.out.println("TEST 1 - MAŁY ZBIÓR (1K) = " + performanceTest1SmallResult + " [ms]");
         System.out.println("TEST 1 - ŚREDNI ZBIÓR (10K) = " + performanceTest1MediumResult + " [ms]");
         System.out.println("TEST 1 - DUŻY ZBIÓR (100K) = " + performanceTest1LargeResult + " [ms]");
@@ -81,8 +82,8 @@ public class SparkProgram {
         System.out.println("TEST 2 - JEDEN TYP KIEROWCY = " + performanceTest2OneTypeResult + " [ms]");
         System.out.println("TEST 2 - WSZYSTKIE TYPY KIEROWCÓW = " + performanceTest2AllTypesResult + " [ms]");
 
-        System.out.println("TEST 1 - MAŁA LICZBA OFIAR I POJAZDÓW = " + performanceTest3LowResult + " [ms]");
-        System.out.println("TEST 1 - DUŻA LICZBA OFIAR I POJAZDÓW = " + performanceTest3HighResult + " [ms]");
+        System.out.println("TEST 3 - MAŁA LICZBA OFIAR I POJAZDÓW = " + performanceTest3LowResult + " [ms]");
+        System.out.println("TEST 3 - DUŻA LICZBA OFIAR I POJAZDÓW = " + performanceTest3HighResult + " [ms]");
     }
 
 }
